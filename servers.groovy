@@ -1,10 +1,10 @@
 def deploy(id) {
     unstash 'war'
-    sh "cp x.war /tmp/webapps/${id}.war"
+    sh "cp x.war /Users/amuniz/jw/tomcat/webapps/${id}.war"
 }
 
 def undeploy(id) {
-    sh "rm /tmp/webapps/${id}.war"
+    sh "rm /Users/amuniz/jw/tomcat/webapps/${id}.war"
 }
 
 def runWithServer(body) {
