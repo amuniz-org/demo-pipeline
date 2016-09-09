@@ -26,8 +26,6 @@ input message: "Does ${jettyUrl}staging/ look good?"
 
 stage name: 'Production', concurrency: 1
 node {
-    sh "wget -O - -S ${jettyUrl}staging/"
-    echo 'Production server looks to be alive'
     servers.deploy 'production'
     echo "Deployed to ${jettyUrl}production/"
 }
