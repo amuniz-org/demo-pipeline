@@ -10,6 +10,7 @@ def undeploy(id) {
 def runWithServer(body) {
     def id = UUID.randomUUID().toString()
     deploy id
+    sleep 5
     try {
         body.call id
     } finally {
