@@ -2,6 +2,8 @@ jettyUrl = 'http://localhost:8081/'
 
 def servers
 
+echo 'Hi! JW'
+
 stage 'Dev'
 node {
     checkout scm
