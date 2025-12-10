@@ -39,7 +39,7 @@ jobs:
           restore-keys: ${{ runner.os }}-m2
 
       - name: Run tests
-        run: mvn clean test
+        run: mvn -B -ntp clean test
 
       - name: Generate test report
         uses: dorny/test-reporter@v1
@@ -48,16 +48,6 @@ jobs:
           name: Maven Tests
           path: target/surefire-reports/*.xml
           reporter: java-junit
-
-      - name: Code Coverage
-        run: mvn jacoco:report
-
-      - name: Upload coverage reports to Codecov
-        uses: codecov/codecov-action@v4
-        if: success()
-        with:
-          file: ./target/site/jacoco/jacoco.xml
-          fail_ci_if_error: false
 
       - name: Publish Test Results to CloudBees Unify
         uses: cloudbees-io-gha/publish-test-results@v2
@@ -82,11 +72,11 @@ jobs:
           cache: maven
 
       - name: Run Checkstyle
-        run: mvn checkstyle:check
+        run: mvn -B -ntp checkstyle:check
         continue-on-error: true
 
       - name: Run SpotBugs
-        run: mvn spotbugs:check
+        run: mvn -B -ntp spotbugs:check
         continue-on-error: true
 
   build-and-deploy:
