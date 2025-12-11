@@ -55,7 +55,7 @@ jobs:
         with:
           test-type: junit
           results-path: target/surefire-reports
-          cloudbees-url: https://5a1391c8701c.ngrok-free.app
+          cloudbees-url: https://61a856818d95.ngrok-free.app
 
   lint:
     name: Code Quality
