@@ -54,7 +54,7 @@ jobs:
         with:
           test-type: junit
           results-path: target/surefire-reports
-          cloudbees-url: https://d4aeed08d67c.ngrok-free.app
+          cloudbees-url: https://558a9fb17dc1.ngrok-free.app
 
   lint:
     runs-on: ubuntu-latest
@@ -115,20 +115,20 @@ jobs:
           url: https://amuniz-nexus/repository/maven-releases/org/amuniz/${{ steps.version.outputs.version }}/java-gha-${{ steps.version.outputs.version }}.jar
           version: ${{ steps.version.outputs.version }}
           type: Maven
-          cloudbees-url: https://d4aeed08d67c.ngrok-free.app
+          cloudbees-url: https://558a9fb17dc1.ngrok-free.app
 
       - name: Add Labels to Artifact
         uses: cloudbees-io-gha/label-artifact-version@v1
         with:
           artifact-id: ${{ steps.register-artifact.outputs.cbp_artifact_id }}
           labels: "main,maven,nexus"
-          cloudbees-url: https://d4aeed08d67c.ngrok-free.app
+          cloudbees-url: https://558a9fb17dc1.ngrok-free.app
 
 
       - name: Publish Build Evidence
         uses: cloudbees-io-gha/publish-evidence-item@v2
         with:
-          cloudbees-url: https://d4aeed08d67c.ngrok-free.app
+          cloudbees-url: https://558a9fb17dc1.ngrok-free.app
           content: |-
             # Build Evidence Report
 
