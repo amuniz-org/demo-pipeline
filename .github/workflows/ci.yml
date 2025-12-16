@@ -115,12 +115,13 @@ jobs:
           version: ${{ steps.version.outputs.version }}
           type: Maven
           cloudbees-url: https://7031a1e62c4b.ngrok-free.app
+          label: "this-is-longer-than-20-chars"
 
       - name: Add Labels to Artifact
         uses: cloudbees-io-gha/label-artifact-version@v1
         with:
           artifact-id: ${{ steps.register-artifact.outputs.cbp_artifact_id }}
-          labels: "main,maven,nexus,this-is-longer-than-20-chars"
+          labels: "main,maven,nexus"
           cloudbees-url: https://7031a1e62c4b.ngrok-free.app
 
 
