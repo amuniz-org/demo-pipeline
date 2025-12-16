@@ -104,7 +104,7 @@ jobs:
           NEW_VERSION="1.0.0-${COMMIT_COUNT}-${SHORT_SHA}"
           echo "Setting version to: $NEW_VERSION"
           echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
-          mvn versions:set -DnewVersion="$NEW_VERSION"
+          mvn -B -ntp versions:set -DnewVersion="$NEW_VERSION"
 
       - name: Register Build Artifacts in CloudBees Platform
         id: register-artifact
@@ -120,7 +120,7 @@ jobs:
         uses: cloudbees-io-gha/label-artifact-version@v1
         with:
           artifact-id: ${{ steps.register-artifact.outputs.cbp_artifact_id }}
-          labels: "main,maven,nexus"
+          labels: "main,maven,nexus,this-is-longer-than-20-chars"
           cloudbees-url: https://7031a1e62c4b.ngrok-free.app
 
 
