@@ -54,7 +54,7 @@ jobs:
         with:
           test-type: junit
           results-path: target/surefire-reports
-          cloudbees-url: https://7031a1e62c4b.ngrok-free.app
+          cloudbees-url: https://cdd83b1a2e9d.ngrok-free.app
 
   lint:
     runs-on: ubuntu-latest
@@ -114,7 +114,7 @@ jobs:
           url: https://amuniz-nexus/repository/maven-releases/org/amuniz/${{ steps.version.outputs.version }}/java-gha-${{ steps.version.outputs.version }}.jar
           version: ${{ steps.version.outputs.version }}
           type: Maven
-          cloudbees-url: https://7031a1e62c4b.ngrok-free.app
+          cloudbees-url: https://cdd83b1a2e9d.ngrok-free.app
           label: "this-is-longer-than-20-chars"
 
       - name: Add Labels to Artifact
@@ -122,13 +122,13 @@ jobs:
         with:
           artifact-id: ${{ steps.register-artifact.outputs.cbp_artifact_id }}
           labels: "main,maven,nexus"
-          cloudbees-url: https://7031a1e62c4b.ngrok-free.app
+          cloudbees-url: https://cdd83b1a2e9d.ngrok-free.app
 
 
       - name: Publish Build Evidence
         uses: cloudbees-io-gha/publish-evidence-item@v2
         with:
-          cloudbees-url: https://7031a1e62c4b.ngrok-free.app
+          cloudbees-url: https://cdd83b1a2e9d.ngrok-free.app
           content: |-
             # Build Evidence Report
 
