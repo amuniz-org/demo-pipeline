@@ -115,7 +115,6 @@ jobs:
           version: ${{ steps.version.outputs.version }}
           type: Maven
           cloudbees-url: https://cdd83b1a2e9d.ngrok-free.app
-          label: "this-is-longer-than-20-chars"
 
       - name: Add Labels to Artifact
         uses: cloudbees-io-gha/label-artifact-version@v1
